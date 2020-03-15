@@ -18,10 +18,11 @@ rgb_path = '/home/wuzida/plotTrajectory/'
 IMU_Data = open("imu_data_raw.txt",'w')
 GPS_Data = open("GPS_data_raw.txt",'w')
 SLAM_Data = open("SLAM_data_raw.txt",'w')
+MSF_Data = open("MSF_data_raw.txt",'w')
 class ImageCreator():
     def __init__(self):
         self.bridge = CvBridge()
-        with rosbag.Bag('/home/wuzida/data/MSF/KITTI_2019-05-14-15-34-59.bag', 'r') as bag:  #要读取的bag文件；
+        with rosbag.Bag('/home/wuzida/plotTrajectory/2020-03-15-10-41-49.bag', 'r') as bag:  #要读取的bag文件；
             for topic,msg,t in bag.read_messages():
                 if topic == "/zr300_node/color/image_raw": #图像的topic；
                         try:
@@ -68,6 +69,19 @@ class ImageCreator():
                         qw = msg.transform.rotation.w
 
                         SLAM_Data.writelines([timestr, " ", str(px), " ",str(py)," ",str(pz)," ",str(qx)," ",str(qy)," ",str(qz)," ",str(qw),"\r\n"])
+
+                elif topic == "/msf_core/pose": #msf topic
+
+                        timestr = "%d" %  msg.header.stamp.to_sec()
+                        px = msg.pose.pose.position.x 
+                        py = msg.pose.pose.position.y
+                        pz = msg.pose.pose.position.z
+                        qx = msg.pose.pose.orientation.x
+                        qy = msg.pose.pose.orientation.y
+                        qz = msg.pose.pose.orientation.z
+                        qw = msg.pose.pose.orientation.w
+
+                        MSF_Data.writelines([timestr, " ", str(px), " ",str(py)," ",str(pz)," ",str(qx)," ",str(qy)," ",str(qz)," ",str(qw),"\r\n"])
  
 if __name__ == '__main__':
     try:
