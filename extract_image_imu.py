@@ -22,7 +22,7 @@ MSF_Data = open("MSF_data_raw.txt",'w')
 class ImageCreator():
     def __init__(self):
         self.bridge = CvBridge()
-        with rosbag.Bag('/home/wuzida/plotTrajectory/2020-03-15-10-41-49.bag', 'r') as bag:  #要读取的bag文件；
+        with rosbag.Bag('/home/wuzida/plotTrajectory/MSF-SLAM-GPS.bag', 'r') as bag:  #要读取的bag文件；
             for topic,msg,t in bag.read_messages():
                 if topic == "/zr300_node/color/image_raw": #图像的topic；
                         try:
