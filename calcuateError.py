@@ -99,9 +99,9 @@ with warnings.catch_warnings():
         MSF_noised_y = MSF_noised[:,2]
         MSF_noised_z = MSF_noised[:,3]
 
-#msf_sysn_time,msf_sysn_x = time_syn(MSF_time,MSF_noised_x)
-#msf_sysn_time,msf_sysn_y = time_syn(MSF_time,MSF_noised_y)
-#msf_sysn_time,msf_sysn_z = time_syn(MSF_time,MSF_noised_z)
+msf_sysn_time,msf_sysn_x = time_syn(MSF_time,MSF_noised_x)
+msf_sysn_time,msf_sysn_y = time_syn(MSF_time,MSF_noised_y)
+msf_sysn_time,msf_sysn_z = time_syn(MSF_time,MSF_noised_z)
 
 MAE_x_msf2GPS = calculateMAE(msf_sysn_time,GPS_time,msf_sysn_x,GPS_raw_x)
 MAE_y_msf2GPS = calculateMAE(msf_sysn_time,GPS_time,msf_sysn_y,GPS_raw_y)
