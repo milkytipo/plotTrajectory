@@ -64,7 +64,7 @@ def calculateRMSE(msfTime, dataTime,msfArray_x,msfArray_y,msfArray_z,dataArray_x
 
 with warnings.catch_warnings():
    # warnings.simplefilter("ignore")
-    GPS_raw = np.loadtxt("./GPS_raw.txt")
+    GPS_raw = np.loadtxt("./GPS_Standard_Raw.txt")
     if GPS_raw[:,1] is not None:
         GPS_time= GPS_raw[:,0]
         GPS_raw_x = GPS_raw[:,1]
@@ -92,7 +92,7 @@ with warnings.catch_warnings():
 
 with warnings.catch_warnings():
    # warnings.simplefilter("ignore")
-    MSF_noised = np.loadtxt("./MSF_noised-03.txt")
+    MSF_noised = np.loadtxt("./MSF_data_raw.txt")
     if MSF_noised[:,1] is not None:
         MSF_time= MSF_noised[:,0]
         MSF_noised_x = MSF_noised[:,1]
