@@ -1,0 +1,5 @@
+#ignore the intermediate files 
+GPS_data_raw.txt
+MSF_data_raw.txt
+imu_data_raw.txt
+SLAM_data_raw.txt
