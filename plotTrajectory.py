@@ -77,7 +77,7 @@ ax.set_ylabel("y")
 ax.set_zlabel("z")
 
 # draw the figure, the color is r = read
-figure = ax.plot(SLAM_data_x, SLAM_data_y, SLAM_data_z, c='r',label = 'SLAM')
+#figure = ax.plot(SLAM_data_x, SLAM_data_y, SLAM_data_z, c='r',label = 'SLAM')
 figure = ax.plot(GPS_data_x, GPS_data_y, GPS_data_z, c='b',label = 'GPS')
 figure = ax.plot(MSF_data_x, MSF_data_y, MSF_data_z, c='g',label = 'MSF')
 ax.legend()
