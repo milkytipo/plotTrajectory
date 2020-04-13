@@ -13,6 +13,7 @@ The usage is very simple, you just need to use rosbag record node to record the 
 
 Then, you can see the trajectory like this:
 <div align = center><img width = "600" height ="400" src ="https://github.com/milkytipo/MSF_developed/blob/master/images/MSF-SLAM-GPS.png" /></div>
+<div align = center><img width = "600" height ="400" src ="https://github.com/milkytipo/MSF_developed/blob/master/MSF_noised_results/noised03-GPS-MSF-Front.png" /></div>
 
 I also add the calcuateError function in [plotTrajectory](https://github.com/milkytipo/plotTrajectory). If you do not change the output filename in extract_topics_from_rosbag.py, you just directly run:
 ```
